@@ -1,12 +1,14 @@
 require ('dotenv').config()
 
-
+const path = require('path')
 const express = require('express')
 const fs = require('fs')
 const multer = require('multer')
 const upload = multer({ dest: 'images/' })
 const app = express()
 const database = require('./database')
+
+app.use(express.static(path.join(__dirname, "build")))
 
 
 
